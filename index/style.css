@@ -1,0 +1,80 @@
+/* Instagram Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f2a6c9, #c3b1e1, #a4c8e1);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;  /* Adjust for mobile */
+    text-align: center;
+}
+
+/* Centered Instagram-Like Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+/* Make Images Bigger */
+.gallery-item {
+    width: 100%;
+    height: auto;
+    max-width: auto; /* Set a limit */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+/* Lightbox Effect */
+.lightbox {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed positioning to stay in place */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    width: 80%; /* Adjust width as needed */
+    height: auto; /* Allow height to adjust based on content */
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Make it 1 Column on Small Screens
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Show one image per row */
+
